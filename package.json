@@ -1,0 +1,23 @@
+{
+  "name": "rest-api-with-node",
+  "version": "1.0.0",
+  "description": "REST API with node js simple shopping",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaghunathVadlakonda/REST-API-with-node-js.git"
+  },
+  "author": "RaghunathVadlakonda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaghunathVadlakonda/REST-API-with-node-js/issues"
+  },
+  "homepage": "https://github.com/RaghunathVadlakonda/REST-API-with-node-js#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
