@@ -10,9 +10,23 @@ router.get('/', (req, res, next) => {
 
 //this post route for adding order
 router.post('/',(req, res, next) => {
-    res.status(200).json({
-        message : "POST request to /orders"
+    res.status(201).json({
+        message : "order created!"
     });
 });
+
+router.get('/:orderId',(req, res, next) => {
+   res.status(200).json({
+       message : "order get with orderid",
+       orderId : req.params.orderId
+   });
+});
+
+router.delete('/:orderId',(req, res, next) => {
+    res.status(200).json({
+        message : "order deleted",
+        orderId : req.params.orderId
+    });
+ });
 
 module.exports = router;
