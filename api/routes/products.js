@@ -23,14 +23,18 @@ router.post('/',(req, res, next) => {
     .save()
     .then(result => {
         console.log(result);
+        res.status(201).json({
+            message : "POST request to /products",
+            createdProduct : product
+        });
     })
     .catch(err => 
         console.log(err));
+        res.status(500).json({
+            error : err
+        })
         
-    res.status(201).json({
-        message : "POST request to /products",
-        createdProduct : product
-    });
+  
 });
 
 // this productId route for particuler shows one product based on productId
@@ -41,6 +45,14 @@ router.get('/:productId',(req, res, next) => {
     .exec()
     .then(doc => {
         console.log("fetching from database", doc);
+        if(doc){
+            res.status(200).json(doc);
+        } else {
+            res.status(404).json({
+                message : "Not A Valid id entered"
+            })
+        }
+
         res.status(200).json(doc);
     })
     .catch(err => {
