@@ -52,8 +52,6 @@ router.get('/:productId',(req, res, next) => {
                 message : "Not A Valid id entered"
             })
         }
-
-        res.status(200).json(doc);
     })
     .catch(err => {
         console.log(err);
