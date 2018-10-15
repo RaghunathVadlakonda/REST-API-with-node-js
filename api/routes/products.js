@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 //this post route for adding product
 router.post('/',(req, res, next) => {
     const product = new Product({
-        _id : new mongoose.Types.ObjectId(),
+        // _id : new mongoose.Types.ObjectId(),
         name : req.body.name,
         price : req.body.price 
     });
@@ -34,18 +34,21 @@ router.post('/',(req, res, next) => {
 });
 
 // this productId route for particuler shows one product based on productId
+// fetching product data from database with id
 router.get('/:productId',(req, res, next) => {
     const id = req.params.productId;
-    if(id === 'special'){
-        res.status(200).json({
-            message : "excutes when id is special",
-            id : id
+    Product.findById(id)
+    .exec()
+    .then(doc => {
+        console.log("fetching from database", doc);
+        res.status(200).json(doc);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error : err
         });
-            } else {
-                     res.status(200).json({
-                    message : "Hey this is productid!"
-        });
-    }
+    })
 });
 
 // this route for updating one product
