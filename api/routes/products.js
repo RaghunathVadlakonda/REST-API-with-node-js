@@ -72,8 +72,22 @@ router.get('/:productId',(req, res, next) => {
 
 // this route for updating one product
 router.patch('/:productId',(req, res, next) => {
-    res.status(200).json({
-        message : " updated product!"
+    const id = req.params.productId;
+    const updateOps = {};
+    for(const ops of req.body){
+        updateOps[ops.propName] = ops.value;
+    }
+    Product.update({_id : id},{$set : updateOps})
+    .exec()
+    .then(result => {
+        console.log(result);
+        res.status(200).json(result);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error : err
+        });
     });
 });    
 
