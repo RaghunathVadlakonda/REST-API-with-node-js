@@ -7,10 +7,16 @@ const Product = require('../models/product');
 // this route for shows all products
 router.get('/', (req, res, next) => {
    Product.find()
+// select - which fields we want display   
+   .select('name price _id')
    .exec()
    .then(docs =>{
-       console.log(docs);
-       res.status(200).json(docs);
+        
+    const response = {
+        count: docs.length,
+        products : docs
+       };
+       res.status(200).json(response);
    })
    .catch(err => {
        console.log(err);
