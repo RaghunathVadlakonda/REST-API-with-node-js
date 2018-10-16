@@ -14,6 +14,9 @@ mongoose.connect('mongodb://Raghunath:' + process.env.MONGO_ATLAS_PW + '@node-re
 }
 );
 
+// DeprecationWarning
+mongoose.Promise = global.Promise;
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
