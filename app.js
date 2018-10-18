@@ -8,7 +8,8 @@ const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
 //connecting to mongodb with mongoose
-mongoose.connect('mongodb://Raghunath:' + process.env.MONGO_ATLAS_PW + '@node-rest-shopping-shard-00-00-xqotk.mongodb.net:27017,node-rest-shopping-shard-00-01-xqotk.mongodb.net:27017,node-rest-shopping-shard-00-02-xqotk.mongodb.net:27017/test?ssl=true&replicaSet=node-rest-shopping-shard-0&authSource=admin&retryWrites=true',
+
+mongoose.connect('mongodb://Raghunath:'+ process.env.MONGO_ATLAS_PW + '@node-rest-shopping-shard-00-00-xqotk.mongodb.net:27017,node-rest-shopping-shard-00-01-xqotk.mongodb.net:27017,node-rest-shopping-shard-00-02-xqotk.mongodb.net:27017/test?ssl=true&replicaSet=node-rest-shopping-shard-0&authSource=admin&retryWrites=true',
 {
     useNewUrlParser: true 
 }
@@ -16,6 +17,7 @@ mongoose.connect('mongodb://Raghunath:' + process.env.MONGO_ATLAS_PW + '@node-re
 
 // DeprecationWarning
 mongoose.Promise = global.Promise;
+
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended : true}));
