@@ -4,7 +4,7 @@
   "description": "REST API with node js simple shopping",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +25,9 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
-  }
+  },
+    "engines": {
+      "node" : "10.7.0"
+    }
+  
 }
