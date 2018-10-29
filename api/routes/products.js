@@ -40,7 +40,7 @@ router.get('/', (req, res, next) => {
 //this post route for adding product
 router.post('/',(req, res, next) => {
     const product = new Product({
-        // _id : new mongoose.Types.ObjectId(),
+        _id : new mongoose.Types.ObjectId(),
         name : req.body.name,
         price : req.body.price 
     });
@@ -62,12 +62,12 @@ router.post('/',(req, res, next) => {
             }
         });
     })
-    .catch(err => 
-        console.log(err));
+    .catch(err => {
+        console.log(err);
         res.status(500).json({
             error : err
         })
-        
+    });
   
 });
 
