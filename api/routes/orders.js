@@ -10,6 +10,7 @@ const Product = require('../models/product');
 router.get('/', (req, res, next) => {  
     Order.find()
     .select('quantity product _id')
+    .populate('product', 'name')
     .exec()
     .then(docs => {
         res.status(200).json(docs);
@@ -61,6 +62,7 @@ router.get('/:orderId',(req, res, next) => {
     const id = req.params.orderId;
     Order.findById(id)
     .select('quantity _id product')
+    .populate('product')
     .exec()
     .then(doc => {
         console.log("fetching from database", doc);
