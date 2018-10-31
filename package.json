@@ -1,32 +1,29 @@
 {
-  "name": "rest-api-with-node",
+  "name": "REST-API-with-node-js",
   "version": "1.0.0",
-  "description": "REST API with node js simple shopping",
+  "description": "REST API with node js",
   "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.3",
+    "nodemon": "^1.18.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RaghunathVadlakonda/REST-API-with-node-js.git"
   },
-  "author": "RaghunathVadlakonda",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RaghunathVadlakonda/REST-API-with-node-js/issues"
   },
-  "homepage": "https://github.com/RaghunathVadlakonda/REST-API-with-node-js#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "mongoose": "5.3.3",
-    "morgan": "^1.9.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.4"
-  },
-  "engines": {
-    "node": "10.7.0"
-  }
+  "homepage": "https://github.com/RaghunathVadlakonda/REST-API-with-node-js#readme"
 }
