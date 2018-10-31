@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+const userRoutes = require('./api/routes/user');
 
 //connecting to mongodb with mongoose
 
@@ -40,6 +41,7 @@ if(req.method === 'OPTIONS'){
 //routes
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/user', userRoutes);
 
 //error handling 
 app.use((req, res, next) => {
