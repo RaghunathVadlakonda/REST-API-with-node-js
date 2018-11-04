@@ -12,7 +12,9 @@ const userRoutes = require('./api/routes/user');
 
 mongoose.connect('mongodb://Raghunath:'+ process.env.MONGO_ATLAS_PW + '@node-rest-shopping-shard-00-00-xqotk.mongodb.net:27017,node-rest-shopping-shard-00-01-xqotk.mongodb.net:27017,node-rest-shopping-shard-00-02-xqotk.mongodb.net:27017/test?ssl=true&replicaSet=node-rest-shopping-shard-0&authSource=admin&retryWrites=true',
 {
-    useNewUrlParser: true 
+    useNewUrlParser: true,
+    useCreateIndex : true,
+    // useFindAndModify : false
 }
 );
 
